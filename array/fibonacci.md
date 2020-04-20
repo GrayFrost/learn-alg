@@ -1,0 +1,50 @@
+# 斐波那契数
+
+## Q
+斐波那契数，通常用 F(n) 表示，形成的序列称为斐波那契数列。该数列由 0 和 1 开始，后面的每一项数字都是前面两项数字的和。也就是：
+```
+F(0) = 0,   F(1) = 1
+F(N) = F(N - 1) + F(N - 2), 其中 N > 1. 
+```
+给定 N，计算 F(N)。
+示例1：
+```
+输入：2
+输出：1
+解释：F(2) = F(1) + F(0) = 1 + 0 = 1.
+```
+
+示例2：
+```
+输入：3
+输出：2
+解释：F(3) = F(2) + F(1) = 1 + 1 = 2.
+```
+
+## A
+常用的递归
+``` javascript
+var fib = function (N) {
+    if (N <2 ) {
+        return N;
+    }
+    if (N > 1) {
+        return fib(N - 1) + fib(N - 2)
+    }
+};
+```
+
+使用动态规划优化
+``` javascript
+var fib = function (N) {
+    const arr = new Array(N + 1);
+    for (let i = 0, length = arr.length; i < length; i++) {
+        if (i < 2) {
+            arr[i] = i;
+        } else {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+    }
+    return arr[N];
+};
+```
