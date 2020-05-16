@@ -11,9 +11,75 @@ LRU缓存淘汰算法的一种。Least Recently Used，最近最少使用。
 // 当访问a时，arr为['b','c','a']，此时b为旧缓存
 // 当添加d时，arr就需要把旧缓存b淘汰掉，此时arr为['c', 'a', 'd']
 ```
+然后给出leetcode上的LRU题目。
+
+## Q
+运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+
+获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。
+写入数据 put(key, value) - 如果密钥已经存在，则变更其数据值；如果密钥不存在，则插入该组「密钥/数据值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。
+
+示例：
+``` javascript
+LRUCache cache = new LRUCache( 2 /* 缓存容量 */ );
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // 返回  1
+cache.put(3, 3);    // 该操作会使得密钥 2 作废
+cache.get(2);       // 返回 -1 (未找到)
+cache.put(4, 4);    // 该操作会使得密钥 1 作废
+cache.get(1);       // 返回 -1 (未找到)
+cache.get(3);       // 返回  3
+cache.get(4);       // 返回  4
+```
 
 ## 数组+对象
 
 ## map
+``` javascript
+class LRUCache {
+    constructor(max) {
+        this.max = max;
+        this.cache = new Map();
+    }
+    put(key, value) {
+        if (this.cache.has(key)) {
+            // 已存在
+            this.cache.delete(key); // 删除旧数据，腾出空间
+        } else if (this.cache.size >= this.max) {
+            // 不存在，是新的缓存，需要判断缓存空间是否已满
+
+            // this.cache.delete(this.cache.keys().next().value) //map 的keys()返回的是一个迭代器，所以可以通过next().value取值，因为对迭代器还不是太熟，所以我直接转成数组后，数组的第一个值便是最旧的。
+            this.cache.delete([...this.cache.keys()][0]);
+        }
+        this.cache.set(key, value);
+    }
+    get(key) {
+        if (this.cache.has(key)) {
+            // 如果已经有
+            let temp = this.cache.get(key);
+            this.cache.delete(key); // 进行了获取数据的操作，重新更新缓存的顺序，表明这不是最旧的
+            this.cache.set(key, temp);
+            return temp;
+        }
+        return -1;
+    }
+}
+
+```
+``` javascript
+let cache = new LRUCache(2);
+
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);
+cache.put(3, 3);
+cache.get(2);
+cache.put(4, 4); 
+cache.get(1);
+cache.get(3); 
+cache.get(4);
+```
 
 ## 总结
