@@ -34,9 +34,11 @@ cache.get(3);       // 返回  3
 cache.get(4);       // 返回  4
 ```
 
-## 数组+对象
+## A
 
-## map
+### map
+ES6的Map数据结构既能保存键值对，还能够记住键的原始插入顺序。
+
 ``` javascript
 class LRUCache {
     constructor(max) {
@@ -82,4 +84,38 @@ cache.get(3);
 cache.get(4);
 ```
 
+### 数组+对象
+``` javascript
+class LRUCache {
+    constructor(max) {
+        this.max = max;
+        this.cache = {};
+        this.keys = [];
+    }
+    put(key, value) {
+        if (this.cache[key]) {
+            this.remove(this.keys, key);
+        } else if (this.keys.length >= this.max) {
+            this.keys.shift();
+            delete this.cache[this.keys[0]];
+        }
+        this.cache[key] = value;
+        this.keys.push(key);
+    }
+    get(key) {
+        if (this.cache[key]) {
+            this.remove(this.keys, key);
+            this.keys.push(key);
+            return this.cache[key];
+        }
+        return -1;
+    }
+    remove(keys, key){
+      return keys.filter(k => k === key);
+    }
+}
+```
+使用数组加对象的方法跟使用map的思想是一致的，相当于map更原始的版本。对象用来存放数据，数组用来记录缓存的容量以及位置。
+
 ## 总结
+每当进行get操作时，需要重新更新缓存的记录。当进行put操作时，判断是否已有缓存，有则删除旧缓存记录，没有的话则判断容量是否已满，满了则删除最老的缓存。最后重新记录缓存信息。结合最开始的示例，应该比较容易理解。
