@@ -6,6 +6,7 @@
 * [有效的括号](./25.md)
 * [爬楼梯](./70.md)
 * [杨辉三角](./118.md)
+* [多数元素](./169.md)
 * [斐波那契数](./array/fibonacci.md)
 * [删除排序数组中的重复项](./array/remove-duplicate.md)
 * [移除元素](./array/remove.md)
