@@ -21,6 +21,7 @@ LeetCode题
 * [存在重复元素](./217.md)
 * [删除链表中的节点](./237.md)
 * [反转字符串](./344.md)
+* [Fizz Buzz](./412.md)
 * [字符串相加](./415.md)
 * [分发饼干](./455.md)
 * [LRU缓存机制](./495.md)
@@ -31,5 +32,4 @@ LeetCode题
 * [删除排序数组中的重复项](./array/remove-duplicate.md)
 * [移除元素](./array/remove.md)
 * [搜索插入位置](./array/search-insert.md)
-* [LRU](./lru.md)
 
