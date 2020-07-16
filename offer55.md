@@ -49,4 +49,13 @@ var maxDepth = function (root) {
 ```
 
 方法二：递归
+``` javascript
+var maxDepth = function (root) {
+  if(!root) {
+    return 0;
+  }
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+}
+```
 方法三：广度优先遍历，即层次遍历
+LeetCode第104题一样的，我用广度优先实现了。思路是之前在做从上到下打印二叉树中学来的。
