@@ -30,6 +30,7 @@ LeetCode题
 * [二进制链表转整数](./1290.md)
 * [从上到下打印二叉树](./offer32.md)
 * [从上到下打印二叉树II](./offer32-2.md)
+* [二叉树的深度](./offer55.md)
 * [斐波那契数](./array/fibonacci.md)
 * [删除排序数组中的重复项](./array/remove-duplicate.md)
 * [移除元素](./array/remove.md)
