@@ -60,6 +60,7 @@ LeetCode题
 ## 剑指offer
 * [二维数组中的查找](./offer4.md)
 * [对称二叉树](./offer28.md)
+* [顺时针打印矩阵](./offer29.md)
 * [从上到下打印二叉树](./offer32.md)
 * [从上到下打印二叉树II](./offer32-2.md)
 * [0～n-1中缺失的数字](./offer53-2.md)
