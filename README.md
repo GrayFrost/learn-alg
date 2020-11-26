@@ -65,3 +65,4 @@ LeetCode题
 * [从上到下打印二叉树II](./offer32-2.md)
 * [0～n-1中缺失的数字](./offer53-2.md)
 * [二叉树的深度](./offer55.md)
+* [求1+2+…+n](./offer64.md)
