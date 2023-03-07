@@ -83,6 +83,7 @@ LeetCode题
 
 ## 剑指offer
 * [二维数组中的查找](./offer4.md)
+* [从尾到头打印链表](./offer6.md)
 * [用两个栈实现队列](./offer9.md)
 * [对称二叉树](./offer28.md)
 * [顺时针打印矩阵](./offer29.md)
