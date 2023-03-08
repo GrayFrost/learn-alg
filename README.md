@@ -83,6 +83,7 @@ LeetCode题
 * [数组变换](./1243.md)
 * [十六进制魔术数字](./1271.md)
 * [二进制链表转整数](./1290.md)
+* [删除某些元素后的数组均值](./1619.md)
 * [斐波那契数](./array/fibonacci.md)
 * [删除排序数组中的重复项](./array/remove-duplicate.md)
 * [移除元素](./array/remove.md)
