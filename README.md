@@ -95,6 +95,7 @@ LeetCode题
 * [替换空格](./offer5.md)
 * [从尾到头打印链表](./offer6.md)
 * [用两个栈实现队列](./offer9.md)
+* [青蛙跳台阶问题](./offer10-2.md)
 * [反转链表](./offer24.md)
 * [对称二叉树](./offer28.md)
 * [顺时针打印矩阵](./offer29.md)
