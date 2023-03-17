@@ -97,6 +97,7 @@ LeetCode题
 * [从尾到头打印链表](./offer6.md)
 * [用两个栈实现队列](./offer9.md)
 * [青蛙跳台阶问题](./offer10-2.md)
+* [链表中倒数第K个结点](./offer22.md)
 * [反转链表](./offer24.md)
 * [二叉树的镜像](./offer27.md)
 * [对称二叉树](./offer28.md)
