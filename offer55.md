@@ -33,18 +33,19 @@ var maxDepth = function (root) {
     if (!root) {
         return 0;
     }
-    let depth = 0;
-    let stack = [root];
-    function dfs(node, dep) {
-        dep += 1;
-        if (!node.left && !node.right) {
-            depth = Math.max(depth, dep)
+    let max = 0;
+    function dfs(root, count = 0){
+        if (!root) {
+            return;
         }
-        node.left && dfs(node.left, dep);
-        node.right && dfs(node.right, dep);
+        count++;
+        max = Math.max(count, max);
+        root.left && dfs(root.left, count);
+        root.right && dfs(root.right, count);
+        count--;
     }
-    dfs(root, 0)
-    return depth;
+    dfs(root);
+    return max;
 };
 ```
 
